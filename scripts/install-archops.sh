@@ -26,6 +26,10 @@ mount -o noatime,nodiratime,compress=zstd,space_cache=v2,ssd,subvolid=5 /dev/sda
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
+pacman-key --init
+pacman-key --populate archlinux manjaro
+pacman-key --refresh-keys
+
 #pacman -Sy --confirm archlinux-keyring
 pacstrap /mnt base linux-lts intel-ucode btrfs-progs netctl openssh
 genfstab -U /mnt >> /mnt/etc/fstab
