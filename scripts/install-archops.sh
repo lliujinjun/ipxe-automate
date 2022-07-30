@@ -26,11 +26,9 @@ mount -o noatime,nodiratime,compress=zstd,space_cache=v2,ssd,subvolid=5 /dev/sda
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
-pacman -Sy
-pacman -S --confirm archlinux-keyring
+pacman -Sy --confirm archlinux-keyring
 pacstrap /mnt base linux-lts \
   intel-ucode btrfs-progs netctl openssh
-exit 
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo archops > /mnt/etc/hostname
