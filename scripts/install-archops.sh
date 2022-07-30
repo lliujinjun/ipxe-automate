@@ -76,6 +76,9 @@ arch-chroot /mnt/ netctl enable eth0
 arch-chroot /mnt/ systemctl enable sshd
 
 # Post install
+curl -O https://raw.githubusercontent.com/lliujinjun/ipxe-automate/main/scripts/post-install.sh -o /mnt/home/jude/post-install.sh
+arch-chroot /mnt/ /mnt/home/jude/post-install.sh
 
 #umount -R /mnt
 #reboot
+
