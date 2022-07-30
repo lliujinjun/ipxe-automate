@@ -27,7 +27,7 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 pacman -Sy
-pacman -S --noconfirm archlinux-keyring
+pacman -S --confirm archlinux-keyring
 pacstrap /mnt base linux-lts \
   intel-ucode btrfs-progs netctl openssh
 exit 
