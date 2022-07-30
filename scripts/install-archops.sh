@@ -30,6 +30,7 @@ pacman -Sy
 pacman -S --noconfirm archlinux-keyring
 pacstrap /mnt base linux-lts \
   intel-ucode btrfs-progs netctl openssh
+exit 
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo archops > /mnt/etc/hostname
