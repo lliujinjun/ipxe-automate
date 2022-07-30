@@ -26,7 +26,8 @@ mount -o noatime,nodiratime,compress=zstd,space_cache=v2,ssd,subvolid=5 /dev/sda
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
-pacman -Sy --noconfirm archlinux-keyring
+pacman -Sy
+pacman -S --noconfirm archlinux-keyring
 pacstrap /mnt base linux-lts \
   intel-ucode btrfs-progs netctl openssh
 genfstab -U /mnt >> /mnt/etc/fstab
