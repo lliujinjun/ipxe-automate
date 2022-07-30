@@ -27,7 +27,8 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 pacman -Sy --confirm archlinux-keyring
-pacstrap /mnt base linux-lts intel-ucode btrfs-progs netctl openssh
+pacstrap /mnt base linux-lts \
+  intel-ucode btrfs-progs netctl openssh
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo archops > /mnt/etc/hostname
